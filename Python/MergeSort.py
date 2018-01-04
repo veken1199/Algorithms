@@ -22,7 +22,6 @@ def MergeSort(arr):
             return output
 
 def partition(arr):
-      print("partitioning " ,arr)
       return arr[0:int(len(arr)/2)], arr[int(len(arr)/2):len(arr)]
 
 print(partition([1,2,3,4]))
