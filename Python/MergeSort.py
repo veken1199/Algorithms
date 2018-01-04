@@ -11,7 +11,6 @@ def MergeSort(arr):
 
             # Merging the sorted parts into one list
             while(arr1 and arr2):
-                  print ("start",output , arr1, arr2)
                   if arr1[0] <= arr2[0]:
                         output.append(arr1[0])
                         arr1.pop(0)
@@ -20,7 +19,6 @@ def MergeSort(arr):
                         arr2.pop(0)
 
             output += arr1 + arr2
-            print(output, arr1, arr2)
             return output
 
 def partition(arr):
