@@ -10,5 +10,6 @@ def BubbleSort(arr):
 
       return arr
 
-print(BubbleSort([2,3,1,9,6,4,2,3,1,55,2,33,4,12,-1,2,-120,3]))
+def main():
+      print(BubbleSort([2,3,1,9,6,4,2,3,1,55,2,33,4,12,-1,2,-120,3]))
 

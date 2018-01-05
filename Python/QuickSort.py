@@ -21,5 +21,5 @@ def partition(arr, pivot_index):
       
       return arr1, arr2
 
-
-print (QuickSortRecurrsive([1,4,3,2,1,-12,23,2132,4,2,-12,2,-2,-3,33,2,21]))
+def main():
+      print (QuickSortRecurrsive([1,4,3,2,1,-12,23,2132,4,2,-12,2,-2,-3,33,2,21]))
