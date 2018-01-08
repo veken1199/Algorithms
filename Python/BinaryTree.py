@@ -60,7 +60,7 @@ def main():
       tree.insertNode(6)
       tree.insertNode(7)
       tree.insertNode(6)
-      print(tree.find(54))
+      print("Find 54: ", tree.find(54))
       print("Print in order: ",tree.getChild(tree.root), "\nThe root is: ", tree.root.val)
 
 
