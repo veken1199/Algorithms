@@ -3,6 +3,7 @@ class BinaryNode:
             self.val   = val
             self.right = None
             self.left  = None
+            self.numberOfTime = 1 # for duplicates
 
 class BinaryTree:
       def __init__(self):
@@ -14,24 +15,31 @@ class BinaryTree:
       def insertNode(self, val):
             if(self.root == None):
                   self.root = BinaryNode(val)
+                  return self.root
             
             else:
-                  self._insertNode(val, self.root)
+                  return self._insertNode(val, self.root)
       
       # Simple overloading method
       def _insertNode(self, val, node):
             if(val < node.val):
                   if(node.left == None):
                         node.left = BinaryNode(val)
+                        return node.left
                   else:
-                        self._insertNode(val, node.left)
-            
+                        return self._insertNode(val, node.left)
+                        
+
             if(val > node.val):
                   if(node.right == None):
                         node.right = BinaryNode(val)
+                        return node.right
                   else:
-                        self._insertNode(val, node.right)
-            
+                        return self._insertNode(val, node.right)
+            else:
+                  node.numberOfTime+=1
+                  return node
+
       def find(self, val, node='root'):
             if (node is 'root'):
                   node = self.root
@@ -48,7 +56,7 @@ class BinaryTree:
             if (not node):
                   return ""
             if (not node.right and not node.left):
-                  return str(node.val)
+                  return str(node.val) 
             else:
                   return self.getChild(node.left) + "-" + str(node.val)+ "-" + self.getChild(node.right)
 
@@ -59,7 +67,8 @@ def main():
       tree.insertNode(2)
       tree.insertNode(6)
       tree.insertNode(7)
-      tree.insertNode(6)
+      tree.insertNode(7)
+      tree.insertNode(1)
       print("Find 54: ", tree.find(54))
       print("Print in order: ",tree.getChild(tree.root), "\nThe root is: ", tree.root.val)
 
